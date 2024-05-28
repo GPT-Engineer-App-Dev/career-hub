@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Container, VStack, Heading, Box, Text } from "@chakra-ui/react";
+import { Container, VStack, Heading, Box, Text, Button } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const JobList = () => {
   const [jobs, setJobs] = useState([]);
@@ -21,6 +22,9 @@ const JobList = () => {
               <Heading as="h2" size="md">{job.jobTitle}</Heading>
               <Text mt={2}>{job.description}</Text>
               <Text mt={2} fontWeight="bold">{job.location}</Text>
+            <Button as={Link} to="/apply-job" colorScheme="teal" variant="outline" width="100%" mt={4}>
+                Apply for Job
+              </Button>
             </Box>
           ))
         )}

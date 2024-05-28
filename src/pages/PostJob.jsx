@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Container, VStack, Heading, Input, Textarea, Button, FormControl, FormLabel } from "@chakra-ui/react";
 
 const PostJob = () => {
@@ -6,7 +7,6 @@ const PostJob = () => {
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
   
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const newJob = { jobTitle, description, location };
@@ -50,6 +50,9 @@ const PostJob = () => {
             </FormControl>
             <Button type="submit" colorScheme="teal" width="100%">
               Post Job
+            </Button>
+            <Button as={Link} to="/view-applications" colorScheme="teal" variant="outline" width="100%">
+              View Applications
             </Button>
           </VStack>
         </form>
